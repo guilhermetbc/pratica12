@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Banda(object):
+class Banda(models.Model):
 	"""docstring for Banda"""
 	nome = models.CharField(max_length=100)
 	musicos = models.ManyToManyField('Musico')
@@ -11,10 +11,10 @@ class Banda(object):
 	data_criacao = models.DateField()
 
 	def __str__():
-		return self.nome
+		return self.nome	
 				
 
-class Musico(object):
+class Musico(models.Model):
 	"""docstring for Musico"""
 	nome = models.CharField(max_length=100)
 	data_nascimento  = models.DateField()
@@ -23,7 +23,7 @@ class Musico(object):
 		return self.nome
 				
 
-class EstiloMusical(object):
+class EstiloMusical(models.Model):
 	"""docstring for EstiloMusical"""
 	nome = models.CharField(max_length=100)
 
